@@ -11,6 +11,8 @@ Se agrego polimorfismo con un arreglo para poder imprimir la alineacion de cada 
 
 APP SIMULACION BEISBOL 1.2
 En esta actualización se le agrego la simulación de un juego de beisbol con jugadas aleatorias, el juego consiste en 5 entradas para cada uno de los equipos, local y visitante en donde tendran que hacer hits para generar carreras y poder ganar el partido. Se le agrego una funcion donde consiste en generar numeros aleatorios donde el hit y el out tiene un procentaje de probabilidad en el cual el out es mas probable que el hit, la funcion cuenta con un for para cuando el contador de out llegue a 3 outs se acabe la funcion y guarde los datos de hits y carreras que realizaron los eequipos, asi hasta dentro de 5 entradas para que al final se sume todas las carreras del visitante y del local para generar un resultado final y posteriormente crear un analisis de estadistica el cual te da los numeros de bateo de cada equipo por medio de una formila de batting average y otra formula llamada Whip el cual es para el pitcher que consiste en cuanto es el porcentaje que el pitcher embasa a bateadores por entrada.
+
+La simulacion consiste en simular un juego entre dos equipos donde las jugadas se basan por probabilidades y solo llega a 5 entradas.
 */
 
 
@@ -31,7 +33,7 @@ using namespace std;
 
 int opc1;
 string alta;
-  float hitsv1;
+  float hitsv1; //Definimos la variable donde se guarda el total de hits para cada entrada de los equipos
   float hitsv2;
   float hitsv3;
   float hitsv4;
@@ -41,7 +43,7 @@ string alta;
   float hitsl3;
   float hitsl4;
   float hitsl5;
-  int totalcarrerasv1;
+  int totalcarrerasv1; //Definimos la variable donde se guarda el total de carreras para cada entrada de los equipos
   int totalcarrerasv2;
   int totalcarrerasv3;
   int totalcarrerasv4;
@@ -54,7 +56,7 @@ string alta;
 
 
 
-  float totalhitsv;
+  float totalhitsv;  //Definimos la variable de hits totales del visitante, usamos float en estas ya que al final usaremos la suma de los hits y carreras para realizar estadistica de los pitchers como bateadores y requerimos de los decimales.
   int totalcarrerasv;
   float totalhitsl;
   int totalcarrerasl;
@@ -72,21 +74,22 @@ int main(int argc, char* argv[]){
   
   cout << endl << "New York Yankees Line-Up" << endl << endl ;
   Equipos equipos;
-  equipos.crea_alineacionLocal();
-  equipos.muestra_alineacionLocal();
+  equipos.crea_alineacionLocal(); // Creamos alineacion por medio de polimorfismo
+  equipos.muestra_alineacionLocal(); // Imprimimos Alineacion visitante
   cout << endl; sleep(1);
   cout << " Washington Nationals Line-Up" << endl << endl ; 
 
   equipos.crea_alineacionVisitante();
-  equipos.muestra_alineacionVisitante();sleep(1);
+  equipos.muestra_alineacionVisitante();sleep(1); // Imprimimos Alineacion local
   
-   cout << endl << "Previo del juego:" << endl << endl ; sleep(1);
+   cout << endl << "Previo del juego:" << endl << endl ; sleep(1); // Una breve previa del juego para hacer la simulacion mas interactiva.
     cout << endl << "El dia de hoy tendremos duelo de pitcheo por parte de los dos equipos, en el cual han demostrado la calidad de pitchers que son, contando con muy pocas carreras en lo que va de la temporada regular." << endl << endl <<"Por parte de los Yankees, subira al monticulo Gerrit Cole, proveniente de los Astros de Houston. Cole ha tenido una magnifica temporada regular con una efectividad de 1.55, un Whip de 0.97 y un OBA de 0.199avg esto quiere decir que no concede muchos hits por entrada" << endl
     << endl << "Por parte de los Nationals, subira al diamante el veterano Max Scherzer el cual tiene una temporada regular muy buena como en casi todas las temporadas con una marca de 2.3 de efectividad, 1.3 Whip y un OBA de 0.230avg" << endl << endl ; sleep(1);
 
 
 /* Este programa es una simulación de una alineacion de dos equipos de Beisbol de la MLB, que en este caso tome en cuenta los equipos Yankees y Nationals para recrear una alineacion como normalmente se veria en una pagina de estadisticas, se hace el uso de polimorfismo para la creacion de los objetos con un arreglo para que los imprima cada uno.
 */
+
 Simulacion simulacion;
 cout << endl << "Escribe 1 si quieres iniciar la simulacion" << endl;
 cin >> opc1;
@@ -151,9 +154,9 @@ cout << endl << "Total de hits de Nationals " << hitsl1 + hitsl2 + hitsl3 + hits
 
 cout << endl << "Total de carreras de Yankees " << totalcarrerasv;
 cout << endl << "Total de carreras de Nationals " << totalcarrerasl; sleep (1);
-Average_v = (totalhitsv / (15+totalhitsv));
+Average_v = (totalhitsv / (15+totalhitsv)); // Sacamos el bateo por medio de formula
 Average_l = (totalhitsl / (15+totalhitsl));
-Whip_v = (totalhitsl / 15); 
+Whip_v = (totalhitsl / 15);  // Sacamos el whip del pitcher por medio de formula
 Whip_l = (totalhitsv / 15); 
 cout << endl << endl << "Average de bateo de Yankees " << Average_v<< " avg";
 
@@ -164,7 +167,7 @@ cout << endl << endl << "Stats del pitcher Gerrit Cole (Yankees) " << endl << "O
 cout << endl << "Stats del pitcher Max Scherzer (Nationals) " << endl << "OBA: " << Average_v << " avg" << endl <<  "Whip: " << Whip_l << endl;
 
 }else {
-  cout << "No es un numero valido" << endl;
+  cout << "Ha decido no iniciar la simulacion" << endl;
 }
 }
 

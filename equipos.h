@@ -30,7 +30,7 @@ class Equipos {
 
 void Equipos::crea_alineacionLocal(){
 
-  //Polimorfismo
+  //Polimorfismo, creamos objetos el cual usaremos para la alineación de los Yankees
   j[local] = new Local("Brett Gardner","Derecho","CF",0.261,0);
   local++;
   j[local] = new Local("Aaron Judge","Derecho","RF",0.332,0);
@@ -63,7 +63,7 @@ void Equipos::muestra_alineacionLocal(){
 
 void Equipos::crea_alineacionVisitante(){
 
-  //Polimorfismo
+   //Polimorfismo, creamos objetos el cual usaremos para la alineación de los Nationals
   j[visitante] = new Visitante("Trea Turner","Derecho","SS",0.297,0);
   visitante++;
   j[visitante] = new Local("Adam Eaton","Derecho","RF",0.285,0);

@@ -1,2 +1,2 @@
 language = "c++"
-run = "g++ main.cpp && ./a.out" 
+run = "g++ main.cpp suma.cpp && ./a.out" 

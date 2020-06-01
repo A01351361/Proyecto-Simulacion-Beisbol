@@ -1,4 +1,3 @@
-https://repl.it/join/zqnzjhbl-erickgerardoger
 # Proyecto-Simulacion-Beisbol
 FAVOR DE EJECUTAR EL CODIGO EN REPL.IT, YA QUE NO ES COMPATIBLE CON ALGUNOS IDE (Debido a librerias), SOLO TOMAR LOS ARCHIVOS.H Y ARCHIVOS.CPP
 

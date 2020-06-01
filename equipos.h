@@ -22,7 +22,7 @@ class Equipos {
     Equipos(): local(0),visitante(0){}; //Construcutor
     void crea_alineacionLocal();
     void muestra_alineacionLocal();
-    void muestra_alineación(string posicion);
+    void muestra_alineacion(string posicion);
     void crea_alineacionVisitante();
     void muestra_alineacionVisitante();
     

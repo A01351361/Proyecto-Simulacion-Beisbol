@@ -51,9 +51,8 @@ class Simulacion {
     int getTotalHits(){return totalhits;}
     int crea_jugada_local(float &totalhitsl, int &totalcarrerasl);
     int crea_jugada_visitante(float &totalhits, int &totalcarreras);
-    
+   
   };
-
 
 
 int Simulacion::crea_jugada_visitante(float &totalhits, int &totalcarreras){
@@ -63,9 +62,9 @@ int Simulacion::crea_jugada_visitante(float &totalhits, int &totalcarreras){
    int hits =0;
    int carreras = 0;
   
-   for (int i=0; i < 3;){ //For para que cuando haya un out, i incremente hasta 3 para acabar la entrada.
+   for (int i=0; i < 3;){
      sleep(1);
-    if (dist(mt) == 1 ){ //If para determinar la jugada en base a probabilidad dependiendo del numero aleatorio otorgado
+    if (dist(mt) == 1 ){
         hits++;
         cout << "jugada = Hit" << endl<< endl;
         ;}
@@ -76,7 +75,7 @@ int Simulacion::crea_jugada_visitante(float &totalhits, int &totalcarreras){
       }
         totalhits = hits;
     
-      if (hits > 2){ //If para determinar si hubo carreras en la entrada, solo cuando hay mas de dos hits porque la probabilidad de que el hombre en segunda base se encuentre con otro hit y anote es muy alta.
+      if (hits > 2){
         int carreras(0);
         carreras = hits - 2;
         cout << "Carreras Anotadas: " << carreras << endl;
@@ -86,7 +85,7 @@ int Simulacion::crea_jugada_visitante(float &totalhits, int &totalcarreras){
       
       cout << "Hits Totales:  " << totalhits <<endl ;  sleep(1);
      
-      return( totalhits, totalcarreras); //Para poder guardar el resultado de la funcioin y poder sumarlos al final.
+      return(totalcarreras);
  
   }
 
@@ -120,7 +119,7 @@ int Simulacion::crea_jugada_visitante(float &totalhits, int &totalcarreras){
       
       cout << "Hits Totales:  " << totalhitsl <<endl ;  sleep(1);
      
-      return( totalhitsl, totalcarrerasl);
+      return(totalcarrerasl);
  
   }
     

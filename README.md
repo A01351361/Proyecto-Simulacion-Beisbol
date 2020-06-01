@@ -17,11 +17,13 @@ En la clase de simulacion se crea una funcion la cual genera numeros aleatorios 
 
 En la clase de Jugadores se hacen las variables de instancia para cada jugador, usando un metodo abstracto para que las clases hijas obtengan los stats del jugador pero diferentes, ya sean que son Locales, Visitantes, que si es un pitcher, o un bateador, son funciones que se usan en la clase de Equipos para poder crear los objetos y mandarlos a imprimir.
 
-Finalmente en el Main se realiza un do-while para poder crear un interfa mas interactivo y poder usar las tres opciones que contamos, en el main mandamos a llamar las funciones de muestra_alineacion para mostrar los objetos creados en Equipos. Para el caso 2 (Iniciar Simulacion) se manda a llamar las funciones de Local y Visitante el cual realiza las jugadas aleatoriamentes y las guarda en variables para que al final se sumen y se realicen las estadisticas de bateo y pitcheo de los equipos, asi como las carreras para dar un resultado final del juego.
+Finalmente en el Main se realiza un do-while para poder crear un interfa mas interactivo y poder usar las tres opciones que contamos, en el main mandamos a llamar las funciones de muestra_alineacion para mostrar los objetos creados en Equipos. Para el caso 2 (Iniciar Simulacion) se manda a llamar las funciones de Local y Visitante el cual realiza las jugadas aleatoriamentes y las guarda en variables para que al final se sumen y se realicen las estadisticas de bateo y pitcheo de los equipos, asi como las carreras para dar un resultado final del juego. 
+
+Al final del main se le agrega sobrecarga por medio de Suma.h y Suma.cpp el cual realizan la suma de los hits totales entra ambos equipos y las carreras totales entre ambos equipos.
 
 Se agrego:
 HERENCIA
 METODOS DE ACCESO
-SOBREESCRITURA
+SOBREESCRITURA y SOBRECARGA
 POLIMORFISMO
 CLASES ABSTRACTAS

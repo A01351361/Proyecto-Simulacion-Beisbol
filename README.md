@@ -1,3 +1,4 @@
+[![Run on Repl.it](https://repl.it/badge/github/A01351361/Proyecto-Simulacion-Beisbol)](https://repl.it/github/A01351361/Proyecto-Simulacion-Beisbol)
 # Proyecto-Simulacion-Beisbol
 FAVOR DE EJECUTAR EL CODIGO EN REPL.IT, YA QUE NO ES COMPATIBLE CON ALGUNOS IDE (Debido a librerias), SOLO TOMAR LOS ARCHIVOS.H Y ARCHIVOS.CPP
 

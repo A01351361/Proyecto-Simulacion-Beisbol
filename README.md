@@ -1,5 +1,5 @@
 # Proyecto-Simulacion-Beisbol
-FAVOR DE EJECUTAR EL CODIGO EN REPL.IT, YA QUE NO ES COMPATIBLE CON ALGUNOS IDE (Debido a librerias).
+FAVOR DE EJECUTAR EL CODIGO EN REPL.IT, YA QUE NO ES COMPATIBLE CON ALGUNOS IDE (Debido a librerias), SOLO TOMAR LOS ARCHIVOS.H Y ARCHIVOS.CPP
 
 Este programa es un simulador elaborado para realizar simulaciones de beisbol con tus equipos favoritos y poder apostar con tus amigos ya que aqui es todo aleatoriamente.
 

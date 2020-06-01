@@ -1,5 +1,5 @@
 /*
-* Proyecto Simulacion Beisbol 1.2
+* Proyecto Simulacion Beisbol 1.3
 * Erick Gerardo Calderon Reyes
 * A01351361
 * 25/05/20
@@ -13,6 +13,9 @@ APP SIMULACION BEISBOL 1.2
 En esta actualización se le agrego la simulación de un juego de beisbol con jugadas aleatorias, el juego consiste en 5 entradas para cada uno de los equipos, local y visitante en donde tendran que hacer hits para generar carreras y poder ganar el partido. Se le agrego una funcion donde consiste en generar numeros aleatorios donde el hit y el out tiene un procentaje de probabilidad en el cual el out es mas probable que el hit, la funcion cuenta con un for para cuando el contador de out llegue a 3 outs se acabe la funcion y guarde los datos de hits y carreras que realizaron los eequipos, asi hasta dentro de 5 entradas para que al final se sume todas las carreras del visitante y del local para generar un resultado final y posteriormente crear un analisis de estadistica el cual te da los numeros de bateo de cada equipo por medio de una formila de batting average y otra formula llamada Whip el cual es para el pitcher que consiste en cuanto es el porcentaje que el pitcher embasa a bateadores por entrada.
 
 La simulacion consiste en simular un juego entre dos equipos donde las jugadas se basan por probabilidades y solo llega a 5 entradas.
+
+APP SIMULACION BEISBOL 1.2
+Se le agrego una interfaz para poder interactuar con las diferentes opciones que te dan, para poder visualizar la alineacion, salir del programa e iniciar la simulacion. Se agrego un archivo de suma el cual realiza sobrecarga con la suma de las variables de hits y de carreras.
 */
 
 

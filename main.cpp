@@ -27,6 +27,8 @@ La simulacion consiste en simular un juego entre dos equipos donde las jugadas s
 #include <unistd.h>
 #endif
 #include <cstdlib>
+#include "suma.h"
+
 
 
 using namespace std;
@@ -64,44 +66,82 @@ string alta;
   float Average_l;
   float Whip_v;
   float Whip_l;
-  
+  int opcion;
+  int o1;
+
+
+
 
   
+ void Starting ()
+    {
+    cout<<"\n\tBienvenido al Interfaz de nuestra Simulacion de Beisbol";
+    cout<<"\n\n\t¿Deseas entrar a la aplicacion?: ";
+    cout<<"\n\t1. Si";
+    cout<<"\n\t2. Salir del programa";
+  }
 
-int main(int argc, char* argv[]){
-  
-  alta="Parte Alta";
-  
-  cout << endl << "New York Yankees Line-Up" << endl << endl ;
-  Equipos equipos;
-  equipos.crea_alineacionLocal(); // Creamos alineacion por medio de polimorfismo
+    void Interfaz ()
+    {
+    cout<<"\n\n\tSelecciona una acción: ";
+    cout<<"\n\t1. Salir del programa";
+    cout<<"\n\t2. Ver Alineacion de los Equipos";
+    cout<<"\n\t3. Iniciar Simulacion";
+    }
+int opcionaplicacion;
+
+
+   
+
+   
+int main(int argc, char* argv[]) {
+Equipos equipos;
+Simulacion simulacion;
+Suma suma;
+opcion=1;
+
+cout << "\n\n\tBienvenido al simulador de Beisbol"<<endl;
+if (opcion == 1){
+  do{
+Interfaz();
+cout<<"\n\n\tQue deseas hacer: ";
+  fflush(stdin);
+  cin>>o1;
+  system("clear");
+
+switch (o1){
+case 2:
+	cout << endl << "New York Yankees Line-Up" << endl << endl ;
+  equipos.crea_alineacionLocal();  // Creamos alineacion por medio de polimorfismo
   equipos.muestra_alineacionLocal(); // Imprimimos Alineacion visitante
-  cout << endl; sleep(1);
+  cout << endl; sleep(1); 
   cout << " Washington Nationals Line-Up" << endl << endl ; 
 
   equipos.crea_alineacionVisitante();
-  equipos.muestra_alineacionVisitante();sleep(1); // Imprimimos Alineacion local
-  
-   cout << endl << "Previo del juego:" << endl << endl ; sleep(1); // Una breve previa del juego para hacer la simulacion mas interactiva.
+  equipos.muestra_alineacionVisitante();sleep(1); // Imprimimos Alineacion local 
+  cout << endl << "Previo del juego:" << endl << endl ; sleep(1);// Una breve previa del juego para hacer la simulacion mas interactiva.
     cout << endl << "El dia de hoy tendremos duelo de pitcheo por parte de los dos equipos, en el cual han demostrado la calidad de pitchers que son, contando con muy pocas carreras en lo que va de la temporada regular." << endl << endl <<"Por parte de los Yankees, subira al monticulo Gerrit Cole, proveniente de los Astros de Houston. Cole ha tenido una magnifica temporada regular con una efectividad de 1.55, un Whip de 0.97 y un OBA de 0.199avg esto quiere decir que no concede muchos hits por entrada" << endl
     << endl << "Por parte de los Nationals, subira al diamante el veterano Max Scherzer el cual tiene una temporada regular muy buena como en casi todas las temporadas con una marca de 2.3 de efectividad, 1.3 Whip y un OBA de 0.230avg" << endl << endl ; sleep(1);
 
+    
 
-/* Este programa es una simulación de una alineacion de dos equipos de Beisbol de la MLB, que en este caso tome en cuenta los equipos Yankees y Nationals para recrear una alineacion como normalmente se veria en una pagina de estadisticas, se hace el uso de polimorfismo para la creacion de los objetos con un arreglo para que los imprima cada uno.
-*/
 
-Simulacion simulacion;
-cout << endl << "Escribe 1 si quieres iniciar la simulacion" << endl;
-cin >> opc1;
-if (opc1 == 1){
+break;
+case 1:
+cout <<"\n\t\t¡Gracias por utilizar nuestro Simulador de Beisbol!\n";
+cout <<"\t\t¡Usted ha salido del programa!\n";
+exit(0);
+case 3:
   cout <<  endl <<  "Inicio de simulacion " <<  "..." << endl; sleep (3);
   
   cout << endl << "Entrada 1°, "<< "Yankees " << endl << endl;sleep (1);
   simulacion.crea_jugada_visitante(hitsv1, totalcarrerasv1);
-  
+
 
   cout << endl << endl << "Entrada 1°, Nationals" << endl<< endl ;sleep (1);
   simulacion.crea_jugada_local(hitsl1, totalcarrerasl1);
+
+
 
 cout << endl << endl << "CAMBIO DE ENTRADA " << endl;sleep(1);
   cout << endl << "Entrada 2°, "<< "Yankees " << endl << endl;sleep (1);
@@ -166,8 +206,18 @@ cout << endl << endl << "Stats del pitcher Gerrit Cole (Yankees) " << endl << "O
 
 cout << endl << "Stats del pitcher Max Scherzer (Nationals) " << endl << "OBA: " << Average_v << " avg" << endl <<  "Whip: " << Whip_l << endl;
 
-}else {
-  cout << "Ha decido no iniciar la simulacion" << endl;
+Suma s1(totalhitsv,totalcarrerasv); // Sobrecarga
+Suma s2(totalhitsl,totalcarrerasl);
+Suma s3;
+s3 = s1 + s2;
+cout << endl << "El total de hits entre ambos equipos fue de " << s3.getHits() << ", el total de carreras entre ambos equipos fue de " << s3.getCarreras() << endl;
+break;
 }
-}
+  } while(o1!=4);}
+  cout <<"No ha escogido un numero valido";
+  exit(0);
+return 0;
 
+
+
+}

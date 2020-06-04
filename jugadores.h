@@ -10,7 +10,7 @@ class Jugadores {
   string nombre; // Nombre del jugador
   string mano; //Derecho o Zurdo
   string posicion; //Posicion en la que juega
-  int cansancio; 
+  int cansancio; //Cansancio, pero en esta simulacion todavia no se le da uso
   string equipo_pos;
 
 
@@ -24,7 +24,7 @@ class Jugadores {
     string getEquipo_pos(){return equipo_pos;}
     int getCansancio(){return cansancio;}
     virtual string to_string() = 0; // Funcion para convertir atributos a string
-    virtual double stats_juego() = 0;  //Sobreescritura
+    virtual double stats_juego() = 0;  //Sobreescritura y Metodo abstracto
     
     };
     

@@ -14,7 +14,7 @@ En esta actualización se le agrego la simulación de un juego de beisbol con ju
 
 La simulacion consiste en simular un juego entre dos equipos donde las jugadas se basan por probabilidades y solo llega a 5 entradas.
 
-APP SIMULACION BEISBOL 1.2
+APP SIMULACION BEISBOL 1.3
 Se le agrego una interfaz para poder interactuar con las diferentes opciones que te dan, para poder visualizar la alineacion, salir del programa e iniciar la simulacion. Se agrego un archivo de suma el cual realiza sobrecarga con la suma de las variables de hits y de carreras.
 */
 
@@ -25,12 +25,12 @@ Se le agrego una interfaz para poder interactuar con las diferentes opciones que
 #include "equipos.h"
 #include "simulacion.h"
 #ifdef _WIN32
-#include <Windows.h>
+#include <Windows.h> //Libreria para agregar Pausa a la simulacion
 #else
 #include <unistd.h>
 #endif
 #include <cstdlib>
-#include "suma.h"
+#include "suma.h" //Archivo donde se realiza la sobre carga
 
 
 

@@ -23,7 +23,7 @@ class Suma{
     Suma(float, int);
      Suma operator+(const Suma& valores)
     {
-      Suma temp; //Suma d
+      Suma temp; //Suma de los hits totales y carreras totales
       temp.totalhits = this->totalhits + valores.totalhits;
       temp.totalcarreras = this->totalcarreras + valores.totalcarreras;
       return temp;

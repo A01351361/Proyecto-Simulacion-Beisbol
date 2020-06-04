@@ -1,7 +1,7 @@
 #ifndef SIMULACION_H //Definir clase
 #define SIMULACION_H
 #ifdef _WIN32
-#include <Windows.h>
+#include <Windows.h> //Para PAUSAS
 #else
 #include <unistd.h>
 #endif
@@ -14,7 +14,7 @@
 #include "jugadores.h" //Biblioteca con mis objetos a usar que en este caso es Jugadores
 
 #include <stdio.h>
-#include <random>
+#include <random> //Biblioteca para crear numeros aleatorios
 
 using namespace std;
 
@@ -24,7 +24,6 @@ class Simulacion {
   private: //Declaración de variables
     int hits; 
     int dato;
-    int apuntador;
     float totalhits;
     int totalcarreras;
     float totalhitsv;
@@ -34,10 +33,9 @@ class Simulacion {
 
 
   public: //Declaración de constructor y metodos
-    Simulacion(): hits(0),dato(0), totalhits(0), totalcarreras(0), totalhitsv(0), totalcarrerasv(0){};;
-    Simulacion(int h, int d, float th, int tc,float thl, int tcl){
+    Simulacion(): hits(0), totalhits(0), totalcarreras(0), totalhitsv(0), totalcarrerasv(0){};;
+    Simulacion(int h, float th, int tc,float thl, int tcl){
       hits = h;
-      dato = d;
       totalhits = thl;
       totalcarreras = tcl;
       totalhits = th;
@@ -62,7 +60,7 @@ int Simulacion::crea_jugada_visitante(float &totalhits, int &totalcarreras){
    int hits =0;
    int carreras = 0;
   
-   for (int i=0; i < 3;){
+   for (int i=0; i < 3;){ //Funcion for en la cual va de 0 a 3 que quiere decir que hubo 3 outs en la funcion. La funcion consiste en que se genera un numero aleatorio y dependiendo del numero que sera de 1 a 5 se inicializa un if para determinar que jugada fue.
      sleep(1);
     if (dist(mt) == 1 ){
         hits++;
@@ -75,7 +73,7 @@ int Simulacion::crea_jugada_visitante(float &totalhits, int &totalcarreras){
       }
         totalhits = hits;
     
-      if (hits > 2){
+      if (hits > 2){ // Si hits es mayor a 2 se inicializa esta funcion en la cual la variable carreras es igual a los hits totales del equipo en esa entrada menos 2 ya que si hay 2 hits quiere decir que en las bases se encuentra uno en primera base y otro en segunda base. La probabilidad que si hay otro hit el de 2da base anote. Entonces carreras se iguala a Hits -2.
         int carreras(0);
         carreras = hits - 2;
         cout << "Carreras Anotadas: " << carreras << endl;
@@ -96,7 +94,7 @@ int Simulacion::crea_jugada_visitante(float &totalhits, int &totalcarreras){
    int hitsl =0;
    int carrerasl = 0;
   
-   for (int i=0; i < 3;){
+   for (int i=0; i < 3;){ //Funcion for en la cual va de 0 a 3 que quiere decir que hubo 3 outs en la funcion. La funcion consiste en que se genera un numero aleatorio y dependiendo del numero que sera de 1 a 5 se inicializa un if para determinar que jugada fue.
      sleep(1);
     if (dist(mt) == 1 ){
         hitsl++;
@@ -109,7 +107,7 @@ int Simulacion::crea_jugada_visitante(float &totalhits, int &totalcarreras){
       }
         totalhitsl = hitsl;
     
-      if (hitsl > 2){
+      if (hitsl > 2){// Si hits es mayor a 2 se inicializa esta funcion en la cual la variable carreras es igual a los hits totales del equipo en esa entrada menos 2 ya que si hay 2 hits quiere decir que en las bases se encuentra uno en primera base y otro en segunda base. La probabilidad que si hay otro hit el de 2da base anote. Entonces carreras se iguala a Hits -2.
         int carrerasl(0);
         carrerasl = hitsl - 2;
         cout << "Carreras Anotadas: " << carrerasl << endl;

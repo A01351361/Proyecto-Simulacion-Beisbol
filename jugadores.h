@@ -26,6 +26,7 @@ class Jugadores {
     virtual string to_string() = 0; // Funcion para convertir atributos a string
     virtual double stats_juego() = 0;  //Sobreescritura y Metodo abstracto
     
+    
     };
     
   

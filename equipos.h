@@ -25,6 +25,7 @@ class Equipos {
     void muestra_alineacion(string posicion);
     void crea_alineacionVisitante();
     void muestra_alineacionVisitante();
+    double calc_bateo_equipo(); //Uso del metodo abstracto de Jugador para obtener el bateo colectivo del equipo.
     
   };
 
@@ -61,6 +62,14 @@ void Equipos::muestra_alineacionLocal(){
      
 }
 
+double Equipos::calc_bateo_equipo(){
+
+    double total=0;
+    for(int i=0; i<local; i++)
+        total = total + j[i]->stats_juego();
+    return total;
+}
+
 void Equipos::crea_alineacionVisitante(){
 
    //Polimorfismo, creamos objetos el cual usaremos para la alineación de los Nationals
@@ -95,4 +104,7 @@ void Equipos::muestra_alineacionVisitante(){
 		  cout << j[i]->to_string();
      
 }
+
+
+
 #endif

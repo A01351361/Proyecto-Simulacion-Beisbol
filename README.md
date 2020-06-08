@@ -24,7 +24,12 @@ Al final del main se le agrega sobrecarga por medio de Suma.h y Suma.cpp el cual
 
 Se agrego:
 HERENCIA (En Jugadores)
+
 METODOS DE ACCESO 
+
 SOBREESCRITURA y SOBRECARGA (Suma.cpp y Suma.h) (Jugadores.h)
+
 POLIMORFISMO (Equipos.h, Jugadores.h)
+
 CLASES ABSTRACTAS (Jugadores.h - Virtual stats_jugador () = 0;)
+

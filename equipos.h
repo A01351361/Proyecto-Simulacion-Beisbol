@@ -50,7 +50,7 @@ void Equipos::crea_alineacionLocal(){
   local++;
   j[local] = new Local("Miguel Andujar","Zurdo","3B",0.247,0);
   local++;
-  j[local] = new Pitcher_Local("Gerrit Cole","Derecho","P",1.55,0);
+  j[local] = new Pitcher_Local("Gerrit Cole","Derecho","P",1.55,0.93,0);
   local++;
 
 }
@@ -73,7 +73,7 @@ double Equipos::calc_bateo_equipo(){
 void Equipos::crea_alineacionVisitante(){
 
    //Polimorfismo, creamos objetos el cual usaremos para la alineación de los Nationals
-  j[visitante] = new Visitante("Trea Turner","Derecho","SS",0.297,0);
+  j[visitante] = new Local("Trea Turner","Derecho","SS",0.297,0);
   visitante++;
   j[visitante] = new Local("Adam Eaton","Derecho","RF",0.285,0);
   visitante++;
@@ -91,7 +91,7 @@ void Equipos::crea_alineacionVisitante(){
   visitante++;
   j[visitante] = new Local("Victor Robles","Derecho","CF",0.274,0);
   visitante++;
-  j[visitante] = new Pitcher_Visitante("Max Scherzer","Derecho","P",2.3,0);
+  j[visitante] = new Pitcher_Visitante("Max Scherzer","Derecho","P",2.3,0.98,0);
   visitante++;
 
 

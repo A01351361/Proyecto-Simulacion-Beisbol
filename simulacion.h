@@ -23,7 +23,6 @@ class Simulacion {
 
   private: //Declaración de variables
     int hits; 
-    int dato;
     float totalhits;
     int totalcarreras;
     float totalhitsv;
@@ -45,7 +44,7 @@ class Simulacion {
 
     } //Construcutor
     int getHits(){return hits;}
-    int getDato(){return dato;}
+    
     int getTotalHits(){return totalhits;}
     int crea_jugada_local(float &totalhitsl, int &totalcarrerasl);
     int crea_jugada_visitante(float &totalhits, int &totalcarreras);

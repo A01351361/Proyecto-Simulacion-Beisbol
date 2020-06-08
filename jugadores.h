@@ -38,26 +38,22 @@ class Local: public Jugadores{
 
     //Variables de instancia del objeto
     private:
-        double stats_jugador;
+        double bateador_local;
 
     //Metodos del objeto
     public:
 
         Local():Jugadores("","","","Local",0){};
         Local (string nombre, string mano, string posicion, double stats_j, int cansancio):
-          Jugadores(nombre,mano,posicion,"Local",cansancio), stats_jugador(stats_j){};
+          Jugadores(nombre,mano,posicion,"Local",cansancio), bateador_local(stats_j){};
 
-        string getNombre(){ return nombre; }
-        string getMano(){ return mano; }
-        string getPosicion(){ return posicion; }
-        int  getCansancio(){ return cansancio; }
-        double stats_juego(){ return stats_jugador; }
+        double stats_juego(){ return bateador_local; }
         string to_string();
 };
  string Local::to_string(){
     stringstream aux;
     aux << " " << posicion << " - " << nombre << " " << "para un bateo de "<< 
-         stats_jugador << " avg, " <<  "es un bateador "<< mano << "\n";
+         bateador_local << " avg, " <<  "es un bateador "<< mano << "\n";
     return aux.str();
 }
 
@@ -67,20 +63,16 @@ class Visitante: public Jugadores{
 
     //Variables de instancia del objeto
     private:
-        double stats_jugador;
+        double bateador_visitante;
 
     //Metodos del objeto
     public:
 
         Visitante():Jugadores("","","","Visitante",0){};
         Visitante (string nombre, string mano, string posicion, double stats_j, int cansancio):
-          Jugadores(nombre,mano,posicion,"Local",cansancio), stats_jugador(stats_j){};
+          Jugadores(nombre,mano,posicion,"Local",cansancio), bateador_visitante(stats_j){};
 
-        string getNombre(){ return nombre; }
-        string getMano(){ return mano; }
-        string getPosicion(){ return posicion; }
-        double stats_juego(){ return stats_jugador; }
-       
+        double stats_juego(){ return bateador_visitante; }
         string to_string();
  
 };
@@ -88,7 +80,7 @@ class Visitante: public Jugadores{
  string Visitante::to_string(){
     stringstream aux;
     aux << " " << posicion << " - " << nombre << " " << "para un bateo de "<< 
-         stats_jugador << " avg, " <<  "es un bateador "<< mano << "\n";
+         bateador_visitante << " avg, " <<  "es un bateador "<< mano << "\n";
     return aux.str();
 }
 
@@ -97,7 +89,7 @@ class Pitcher_Local: public Jugadores{
 
     //Variables de instancia del objeto
     private:
-        double stats_jugador;
+        double bateo, whip;
 
     //Metodos del objeto
 
@@ -105,22 +97,18 @@ class Pitcher_Local: public Jugadores{
     public:
 
         Pitcher_Local():Jugadores("","","","Local",0){};
-        Pitcher_Local (string nombre, string mano, string posicion, double stats_p_l, int cansancio):
-          Jugadores(nombre,mano,posicion,"Local",cansancio), stats_jugador(stats_p_l){};
+        Pitcher_Local (string nombre, string mano, string posicion, double b, double w , int cansancio):
+          Jugadores(nombre,mano,posicion,"Local",cansancio), bateo(b), whip(w){};
 
-        string getNombre(){ return nombre; }
-        string getMano(){ return mano; }
-        string getPosicion(){ return posicion; }
-        string to_string();
-        double stats_juego(){ return stats_jugador; }
-    
+        double stats_juego(){ return bateo, whip; }
+         string to_string();
  
 };
 
 string Pitcher_Local::to_string(){
     stringstream aux;
     aux << " " << posicion << " - " << nombre << " " << "para una efectividad de "<< 
-         stats_jugador << " ERA, " <<  "es un pitcher "<< mano << "\n";
+         bateo << " ERA, "  << whip << " whip "<<  " es un pitcher "<< mano << "\n";
     return aux.str();
 }
 //Declaro objeto  que hereda de Jugadores
@@ -128,19 +116,16 @@ class Pitcher_Visitante: public Jugadores{
 
     //Variables de instancia del objeto
     private:
-        double stats_jugador;
+        double bateo_v, whip_v;
 
     //Metodos del objeto
     public:
 
         Pitcher_Visitante():Jugadores("","","","Visitante",0){};
-        Pitcher_Visitante (string nombre, string mano, string posicion, double stats_p_v, int cansancio):
-          Jugadores(nombre,mano,posicion,"Local",cansancio), stats_jugador(stats_p_v){};
+        Pitcher_Visitante (string nombre, string mano, string posicion, double b_v, double w_v , int cansancio):
+          Jugadores(nombre,mano,posicion,"Visitante",cansancio),bateo_v(b_v), whip_v(w_v){};
 
-        string getNombre(){ return nombre; }
-        string getMano(){ return mano; }
-        string getPosicion(){ return posicion; }
-        double stats_juego(){ return stats_jugador; }
+        double stats_juego(){ return bateo_v, whip_v; }
         string to_string();
   
  
@@ -149,7 +134,7 @@ class Pitcher_Visitante: public Jugadores{
 string Pitcher_Visitante::to_string(){
     stringstream aux;
     aux << " " << posicion << " - " << nombre << " " << "para una efectividad de "<< 
-         stats_jugador << " ERA, " <<  "es un pitcher "<< mano << "\n";
+         bateo_v << " ERA, "<< whip_v << " whip " <<  "es un pitcher "<< mano << "\n";
     return aux.str();
 }
 

@@ -23,8 +23,8 @@ Finalmente en el Main se realiza un do-while para poder crear un interfa mas int
 Al final del main se le agrega sobrecarga por medio de Suma.h y Suma.cpp el cual realizan la suma de los hits totales entra ambos equipos y las carreras totales entre ambos equipos.
 
 Se agrego:
-HERENCIA
-METODOS DE ACCESO
-SOBREESCRITURA y SOBRECARGA
-POLIMORFISMO
-CLASES ABSTRACTAS
+HERENCIA (En Jugadores)
+METODOS DE ACCESO 
+SOBREESCRITURA y SOBRECARGA (Suma.cpp y Suma.h) (Jugadores.h)
+POLIMORFISMO (Equipos.h, Jugadores.h)
+CLASES ABSTRACTAS (Jugadores.h - Virtual stats_jugador () = 0;)

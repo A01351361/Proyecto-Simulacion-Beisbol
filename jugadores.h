@@ -29,37 +29,11 @@ class Jugadores {
     
     };
     
-  
 
 
 
 //Declaro objeto  que hereda de Jugadores
-class Local: public Jugadores{
-
-    //Variables de instancia del objeto
-    private:
-        double bateador_local;
-
-    //Metodos del objeto
-    public:
-
-        Local():Jugadores("","","","Local",0){};
-        Local (string nombre, string mano, string posicion, double stats_j, int cansancio):
-          Jugadores(nombre,mano,posicion,"Local",cansancio), bateador_local(stats_j){};
-
-        double stats_juego(){ return bateador_local; }
-        string to_string();
-};
- string Local::to_string(){
-    stringstream aux;
-    aux << " " << posicion << " - " << nombre << " " << "para un bateo de "<< 
-         bateador_local << " avg, " <<  "es un bateador "<< mano << "\n";
-    return aux.str();
-}
-
-
-//Declaro objeto  que hereda de Jugadores
-class Visitante: public Jugadores{
+class Bateador: public Jugadores{
 
     //Variables de instancia del objeto
     private:
@@ -68,75 +42,48 @@ class Visitante: public Jugadores{
     //Metodos del objeto
     public:
 
-        Visitante():Jugadores("","","","Visitante",0){};
-        Visitante (string nombre, string mano, string posicion, double stats_j, int cansancio):
+        Bateador():Jugadores("","","","Visitante",0){};
+        Bateador (string nombre, string mano, string posicion, double stats_j, int cansancio):
           Jugadores(nombre,mano,posicion,"Local",cansancio), bateador_visitante(stats_j){};
 
-        double stats_juego(){ return bateador_visitante; }
+        double stats_juego(){ return bateador_visitante; } //De metodo abstracto
         string to_string();
  
 };
 
- string Visitante::to_string(){
+ string Bateador::to_string(){
     stringstream aux;
     aux << " " << posicion << " - " << nombre << " " << "para un bateo de "<< 
-         bateador_visitante << " avg, " <<  "es un bateador "<< mano << "\n";
+         stats_juego() << " avg, " <<  "es un bateador "<< mano << "\n";
     return aux.str();
 }
 
 //Declaro objeto  que hereda de Jugadores
-class Pitcher_Local: public Jugadores{
+class Pitcher: public Jugadores{
 
     //Variables de instancia del objeto
     private:
-        double bateo, whip;
+        double carreras, bases_por_bola, entradas, hits;
 
     //Metodos del objeto
 
     
     public:
 
-        Pitcher_Local():Jugadores("","","","Local",0){};
-        Pitcher_Local (string nombre, string mano, string posicion, double b, double w , int cansancio):
-          Jugadores(nombre,mano,posicion,"Local",cansancio), bateo(b), whip(w){};
+        Pitcher():Jugadores("","","","Local",0){};
+        Pitcher (string nombre, string mano, string posicion, double c, double bb, double e, double h, int cansancio):
+          Jugadores(nombre,mano,posicion,"Local",cansancio), carreras(c), bases_por_bola(bb), entradas(e), hits(h){};
 
-        double stats_juego(){ return bateo, whip; }
+        double stats_juego(){ return ((carreras*9)/ entradas); } //De metodo abstracto
+        double whip(){return ((hits + bases_por_bola)/entradas);}
          string to_string();
  
 };
 
-string Pitcher_Local::to_string(){
+string Pitcher::to_string(){
     stringstream aux;
     aux << " " << posicion << " - " << nombre << " " << "para una efectividad de "<< 
-         bateo << " ERA, "  << whip << " whip "<<  " es un pitcher "<< mano << "\n";
+         stats_juego() << " ERA, " << whip() << " Whip " << " es un pitcher "<< mano << "\n";
     return aux.str();
 }
-//Declaro objeto  que hereda de Jugadores
-class Pitcher_Visitante: public Jugadores{
-
-    //Variables de instancia del objeto
-    private:
-        double bateo_v, whip_v;
-
-    //Metodos del objeto
-    public:
-
-        Pitcher_Visitante():Jugadores("","","","Visitante",0){};
-        Pitcher_Visitante (string nombre, string mano, string posicion, double b_v, double w_v , int cansancio):
-          Jugadores(nombre,mano,posicion,"Visitante",cansancio),bateo_v(b_v), whip_v(w_v){};
-
-        double stats_juego(){ return bateo_v, whip_v; }
-        string to_string();
-  
- 
-};
-
-string Pitcher_Visitante::to_string(){
-    stringstream aux;
-    aux << " " << posicion << " - " << nombre << " " << "para una efectividad de "<< 
-         bateo_v << " ERA, "<< whip_v << " whip " <<  "es un pitcher "<< mano << "\n";
-    return aux.str();
-}
-
-
 #endif

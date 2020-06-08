@@ -62,10 +62,10 @@ void Equipos::muestra_alineacionLocal(){
      
 }
 
-double Equipos::calc_bateo_equipo(){
+double Equipos::calc_bateo_equipo(){ //Promedio del bateo de cada equipo de i<9 ya que solo queremos los bateadores, los pitchers cuentan con otras estadisticas
 
     double total=0;
-    for(int i=0; i<local; i++)
+    for(int i=0; i<9; i++)
         total = total + j[i]->stats_juego();
     return total;
 }

@@ -2,9 +2,19 @@
 # Proyecto-Simulacion-Beisbol
 Cuenta con Boton para correr el Codigo en Rep.it **Run on Repl.it**
 
+# Funcionalidad
+El programa permite que puedas visualizar las alineaciones de dos equipos diferentes de la MLB, que en este caso es Yankees y Nationals, para poder observar que jugadores participaran durante el juego, los pitchers abridores, y alguna estadisticas recientes de cada uno de los jugadores, con su respectivo previo del juego.
+
+Aparte, el programa permite realizar una simulación del juego de beisbol en el cual se realizan jugadas aleatorias por equipo, con su respectiva probabilidad para que sea más interactivo y puedas apostar con tus amigos sobre quien ganara entre los dos equipos, la simulación dura 5 entradas y al final te arroja un resumen del juego donde te da el resultado, las estadisticas de los bateadores y de los pitchers.
+
+# Consideraciones
+El codigo solamente corre en la plataforma de Repl.it, en el cual se ha agregado un boton de **Run on Repl.it** para facilitarlo.
+
+
+
+# Explicacion Codigo
 Este programa es un simulador elaborado para realizar simulaciones de beisbol con tus equipos favoritos y poder apostar con tus amigos ya que aqui es todo aleatoriamente.
 
-Contamos con 3 archivos de clases el cual todos tienen sus respectivos usos.
 
 Contamos con una interfaz creada en el Main donde te da tres opciones a escoger, las opciones son las siguientes:
 1. Muestra Alineacion // Donde se crean los objetos de los jugadores de sus respectivos equipos.

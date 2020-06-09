@@ -1,6 +1,6 @@
 [![Run on Repl.it](https://repl.it/badge/github/A01351361/Proyecto-Simulacion-Beisbol)](https://repl.it/github/A01351361/Proyecto-Simulacion-Beisbol)
 # Proyecto-Simulacion-Beisbol
-FAVOR DE EJECUTAR EL CODIGO EN REPL.IT, YA QUE NO ES COMPATIBLE CON ALGUNOS IDE (Debido a librerias), SOLO TOMAR LOS ARCHIVOS.H Y ARCHIVOS.CPP
+Cuenta con Boton para correr el Codigo en Rep.it **Run on Repl.it**
 
 Este programa es un simulador elaborado para realizar simulaciones de beisbol con tus equipos favoritos y poder apostar con tus amigos ya que aqui es todo aleatoriamente.
 

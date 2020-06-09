@@ -12,7 +12,7 @@ El codigo solamente corre en la plataforma de Repl.it, en el cual se ha agregado
 
 
 
-# Explicacion Codigo
+# Explicación Código
 Este programa es un simulador elaborado para realizar simulaciones de beisbol con tus equipos favoritos y poder apostar con tus amigos ya que aqui es todo aleatoriamente.
 
 

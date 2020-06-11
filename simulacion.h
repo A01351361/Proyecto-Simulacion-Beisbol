@@ -14,7 +14,7 @@
 #include "jugadores.h" //Biblioteca con mis objetos a usar que en este caso es Jugadores
 
 #include <stdio.h>
-#include <random> //Biblioteca para crear numeros aleatorios
+#include <random> //Biblioteca para crear numeros aleatorios..
 
 using namespace std;
 
@@ -27,6 +27,7 @@ class Simulacion {
     int totalcarreras;
     float totalhitsv;
     int totalcarrerasv;
+   
   
 
 
@@ -44,13 +45,20 @@ class Simulacion {
 
     } //Construcutor
     int getHits(){return hits;}
-    
     int getTotalHits(){return totalhits;}
     int crea_jugada_local(float &totalhitsl, int &totalcarrerasl);
     int crea_jugada_visitante(float &totalhits, int &totalcarreras);
    
   };
 
+/**
+ * int crea_jugada_visitante crea una jugada aleatoria hit o out de manera randomizada para el visitante.
+ *
+ * random_device crea un numero, uniform_int_distribution un numero entero en el cual 1,5 significa que me lo creara del numero 1 al 5, el ciclo for es para cuando la entrada ya tenga 3 outs entonces salga del ciclo. El if dentro del for es para determinar la jugada dependiendo del numero aleatorio otorgado para un 20% de hit y 80% de out donde se van sumando los hits y las carreras.
+ *
+ * @param ´"totalhits" debe ser float para estadisticas y "totalcarreras" int para la suma por equipo.
+ * @return TotalHits y totalcarreras en el main y se guarda en una variable para la suma final.
+ */
 
 int Simulacion::crea_jugada_visitante(float &totalhits, int &totalcarreras){
    random_device rd; //Genero un numero aleatorio de 1 a 5
@@ -85,6 +93,16 @@ int Simulacion::crea_jugada_visitante(float &totalhits, int &totalcarreras){
       return(totalcarreras);
  
   }
+
+/**
+ * int crea_jugada_local crea una jugada aleatoria hit o out de manera randomizada para el local.
+ *
+ * random_device crea un numero, uniform_int_distribution un numero entero en el cual 1,5 significa que me lo creara del numero 1 al 5, el ciclo for es para cuando la entrada ya tenga 3 outs entonces salga del ciclo. El if dentro del for es para determinar la jugada dependiendo del numero aleatorio otorgado para un 20% de hit y 80% de out donde se van sumando los hits y las carreras.
+ *
+ * @param ´"totalhits" debe ser float para estadisticas y "totalcarreras" int para la suma por equipo.
+ * @return TotalHits y totalcarreras en el main y se guarda en una variable para la suma final.
+ */
+
 
  int Simulacion::crea_jugada_local(float &totalhitsl, int &totalcarrerasl){
    random_device rd; //Genero un numero aleatorio de 1 a 5

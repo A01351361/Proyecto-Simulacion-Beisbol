@@ -15,6 +15,7 @@ class Equipos {
     int local; //Equipo Local
     int visitante; //Equipo Visitante
     Jugadores *j[MAX]; //apuntador para Jugadores
+    
 
 
 
@@ -22,13 +23,21 @@ class Equipos {
     Equipos(): local(0),visitante(0){}; //Construcutor
     void crea_alineacionLocal();
     void muestra_alineacionLocal();
-    void muestra_alineacion(string posicion);
     void crea_alineacionVisitante();
     void muestra_alineacionVisitante();
     double calc_bateo_equipo(); //Uso del metodo abstracto de Jugador para obtener el bateo colectivo del equipo.
     
   };
 
+/**
+ * crea_alineacionLocal genera objetos en Jugadores[]
+ *
+ * Genera objetos de bateadores y pitcher y posteriormente los
+ * guarda en la variable de instancia en j[]
+ *
+ * @param
+ * @return
+ **/
 void Equipos::crea_alineacionLocal(){
 
   //Polimorfismo, creamos objetos el cual usaremos para la alineación de los Yankees
@@ -54,6 +63,17 @@ void Equipos::crea_alineacionLocal(){
   local++;
 
 }
+
+/**
+ * muestra_alineacionLocal imprime los objetos, los bateadores y el pitcher..
+ *
+ * utiliza el arreglo j[] y el número de local, para recorrer todo el
+ * arreglo imprimiendo cada uno de los objetos con su método to_string().
+ *
+ * @param
+ * @return
+ */
+
 void Equipos::muestra_alineacionLocal(){
 
   //Ciclo para imprimir los objetos
@@ -61,7 +81,14 @@ void Equipos::muestra_alineacionLocal(){
 		  cout << j[i]->to_string();
      
 }
-
+/**
+ * calc_bateo_equipo calcula el promedio del bateo de los bateadores de cada equipo y los imprime
+ *
+ * utiliza el arreglo j[], para recorrer el arreglo hasta el 9, ya que solo queremos los          * bateadores e ir sumandolos.
+ *
+ * @param 
+ * @return "total"(La suma del bateo colectivo)
+ */
 double Equipos::calc_bateo_equipo(){ //Promedio del bateo de cada equipo de i<9 ya que solo queremos los bateadores, los pitchers cuentan con otras estadisticas
 
     double total=0;
@@ -70,6 +97,15 @@ double Equipos::calc_bateo_equipo(){ //Promedio del bateo de cada equipo de i<9 
     return total;
 }
 
+/**
+ * crea_alineacionVisitante genera objetos en Jugadores[]
+ *
+ * Genera objetos de bateadores y pitcher y posteriormente los
+ * guarda en la variable de instancia en j[]
+ *
+ * @param
+ * @return
+ */
 void Equipos::crea_alineacionVisitante(){
 
    //Polimorfismo, creamos objetos el cual usaremos para la alineación de los Nationals
@@ -97,6 +133,16 @@ void Equipos::crea_alineacionVisitante(){
 
 
 }
+/**
+ * muestra_alineacionVisitante imprime los objetos, los bateadores y el pitcher para el siguiente * equipo.
+ *
+ * utiliza el arreglo j[] y el número de visitante, para recorrer todo el
+ * arreglo imprimiendo cada uno de los objetos con su método to_string().
+ *
+ * @param
+ * @return
+ */
+
 void Equipos::muestra_alineacionVisitante(){
 
   //Ciclo para imprimir los objetos

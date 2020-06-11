@@ -14,6 +14,7 @@ class Jugadores {
   string equipo_pos;
 
 
+
   public: //Declaración de metodos
     Jugadores(): nombre(""),mano(""),posicion(""),equipo_pos(""), cansancio(0){}; //Constructor por default de Jugadores
     Jugadores(string name, string hand,string pos, string equipo, int c): nombre(name), mano(hand), cansancio(c), posicion(pos),  equipo_pos(equipo){};
@@ -32,24 +33,34 @@ class Jugadores {
 
 
 
+
 //Declaro objeto  que hereda de Jugadores
 class Bateador: public Jugadores{
 
     //Variables de instancia del objeto
     private:
-        double bateador_visitante;
+        double bateador;
 
     //Metodos del objeto
     public:
 
         Bateador():Jugadores("","","","Visitante",0){};
         Bateador (string nombre, string mano, string posicion, double stats_j, int cansancio):
-          Jugadores(nombre,mano,posicion,"Local",cansancio), bateador_visitante(stats_j){};
+          Jugadores(nombre,mano,posicion,"Local",cansancio), bateador(stats_j){};
 
-        double stats_juego(){ return bateador_visitante; } //De metodo abstracto
+        double stats_juego(){ return bateador; } //De metodo abstracto
         string to_string();
  
 };
+
+/**
+ * to_string convierte los atributos a string.
+ *
+ * concatena todos los valores de los atributos en un string para ser impreso
+ *
+ * @param
+ * @return string con los valores y texto concatenado, en el cual imprime lo que sera el objeto de la alineacion, para un bateador con su respectiva posicion.
+ */
 
  string Bateador::to_string(){
     stringstream aux;
@@ -75,10 +86,28 @@ class Pitcher: public Jugadores{
           Jugadores(nombre,mano,posicion,"Local",cansancio), carreras(c), bases_por_bola(bb), entradas(e), hits(h){};
 
         double stats_juego(){ return ((carreras*9)/ entradas); } //De metodo abstracto
+
+        /**
+ * double whip regresa un valor estadistico para el pitcher.
+ *
+ * Toma los hits, las bases por bola y las entradas declaradas en el objetos y realiza un calculo.
+ *
+ * @param
+ * @return whip regresa un numero con decimales determinado como el whip del pitcher.
+ */
         double whip(){return ((hits + bases_por_bola)/entradas);}
          string to_string();
  
 };
+
+/**
+ * to_string convierte los atributos a string.
+ *
+ * concatena todos los valores de los atributos en un string para ser impreso
+ *
+ * @param
+ * @return string con los valores y texto concatenado, en el cual imprime lo que sera el objeto de la alineacion para un pitcher en el cual imprime dos variables extras.
+ */
 
 string Pitcher::to_string(){
     stringstream aux;
